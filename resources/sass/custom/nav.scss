@@ -1,0 +1,31 @@
+.nav__link {
+  // @apply py-2 text-center border-transparent border-b-3;
+  border-bottom-width: 3px;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-color: transparent;
+  transition: all;
+  transition-duration: 300ms;
+
+  &.active {
+    // @apply font-bold text-primary;
+    color: var(--primary, #71b8c5);
+    font-weight: bold;
+  }
+  &:hover {
+    // @apply border-primary-300;
+    font-weight: bold;
+    border-color: rgba(198,227,232, .8);
+  }
+  &::after {
+    content: attr(data-text);
+    content: attr(data-text) / "";
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    font-weight: bold;
+    display: block;
+  }
+}

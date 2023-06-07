@@ -1,0 +1,167 @@
+:root {
+  --color-primary: #0e6651;
+  --color-secondary: #fc9a64;
+  --color-light: #fffbf8;
+  --color-placeholder: #515151;
+}
+
+/* Base */
+body {
+  background-color: var(--color-light);
+  font-family: 'p22-mackinac-pro', Verdana, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.redactor ul > li:before {
+  color: var(--color-primary);
+}
+
+.redactor {
+  a:not(.btn) {
+    color: var(--color-primary);
+  }
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+  background-color: transparent;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.text-h1 {
+  color: var(--color-primary);
+}
+
+.text-h2 {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+  font-weight: 500 !important;
+}
+
+.section--light {
+  background-color: var(--color-light);
+}
+
+.section + .section {
+  margin-top: 0;
+}
+
+.loader {
+  svg {
+    .bolt {
+      fill: var(--color-secondary);
+    }
+    .wrench .handle {
+      fill: var(--color-primary);
+    }
+  }
+}
+
+/* Buttons & links */
+.btn {
+  border-radius: 0;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  border-width: 1px;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.link::after {
+  color: var(--color-primary);
+}
+
+.link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.link:hover::after {
+  color: var(--color-primary);
+}
+
+/* Cards */
+.rounded-card {
+  border-radius: 0;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-light);
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    box-shadow: inset 0px 0px 0px 4px var(--color-primary);
+  }
+}
+
+/* Panel */
+
+.rounded-panel {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-primary);
+  border-radius: 0;
+}
+
+/* Forms */
+
+.filter__input-radio {
+  accent-color: var(--color-primary) !important;
+}
+
+.filter__input-checkbox {
+  accent-color: var(--color-primary) !important;
+}
+
+.form__input {
+  border-radius: 0;
+  border-color: var(--color-primary);
+  border-width: 1px;
+  background-color: transparent;
+  padding: 0.6rem 0.75rem;
+
+  &::placeholder {
+    color: var(--color-placeholder);
+  }
+
+  &:focus {
+    border-color: var(--color-secondary);
+  }
+}
+
+/* Pagination */
+.pagination button {
+  color: var(--color-primary);
+  background-color: transparent;
+  border-color: var(--color-primary);
+
+  &:hover {
+    color: white;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+}

@@ -1,0 +1,34 @@
+.v-text-field.v-text-field--enclosed:not(.v-text-field--rounded) {
+  > .v-input__control {
+    > .v-input__slot {
+      padding: 4px 12px;
+    }
+  }
+}
+
+.v-select.v-input--dense .v-chip {
+  margin: 3px;
+}
+
+.v-text-field--outlined fieldset {
+  --tw-border-opacity: 1;
+  border-color: rgba(212, 212, 216, var(--tw-border-opacity));
+  border-width: 2px;
+}
+
+.v-input input {
+  max-height: unset;
+}
+
+.v-autocomplete:not(.v-input--is-focused).v-select--chips input {
+  max-height: unset;
+}
+
+// This is for repair multiselect
+.multiselect__option--group {
+  font-weight: 600;
+}
+
+.multiselect__option:not(.multiselect__option--group) {
+  padding-left: 20px;
+}

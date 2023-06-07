@@ -1,0 +1,80 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:vue/recommended",
+        "plugin:vue-a11y/recommended",
+        "prettier",
+        "prettier/vue"
+    ],
+    "parser": "vue-eslint-parser",
+    "settings": {
+        "import/resolver": {
+            "eslint-import-resolver-webpack": {
+                "env": {
+                    "NODE_ENV": "development",
+                    "npm_package_config_path_src": "resources",
+                    "npm_package_config_path_public": "public"
+                }
+            },
+            "node": {
+                "paths": "@"
+            }
+        }
+    },
+    "parserOptions": {
+        "parser": "babel-eslint",
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "rules": {
+        "prefer-rest-params": 0,
+        "semi": 2,
+        "implicit-arrow-linebreak": 0,
+        "import/extensions": "never",
+        "import/no-unresolved": 0,
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allowAfterThis": true
+            }
+        ],
+        "no-param-reassign": [2, { "props": false }],
+        "camelcase": "off",
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "never",
+                "imports": "always-multiline",
+                "objects": "always-multiline"
+            }
+        ],
+        "vue/html-indent": ["error", 4],
+        "vue/html-self-closing": [
+            "error",
+            {
+                "html": {
+                    "void": "always",
+                    "normal": "never"
+                }
+            }
+        ],
+        "vue/max-attributes-per-line": 0,
+        "vue/require-component-is": "off",
+        "indent": [
+            "error",
+            4,
+            {
+                "ignoredNodes": ["TemplateLiteral"]
+            }
+        ],
+        "template-curly-spacing": ["off"]
+    },
+    "plugins": ["vue", "vue-a11y"],
+    "globals": {
+        "Vue": "readonly",
+        "axios": "readonly",
+        "__FLARE_KEY__": "readonly"
+    }
+}

@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'activate' => 'Aktivieren',
+    'activate_repairer' => 'Zugang für Reparateur(e) gewähren?',
+    'city' => 'Ort',
+    'country' => 'Land',
+    'country_code' => 'Ländercode',
+    'deactivate' => 'Deaktivieren',
+    'deactivate_repairer' => 'Deaktivieren',
+    'description' => 'Beschreibung',
+    'dont_activate' => 'Abbrechen',
+    'image' => 'Bild',
+    'is_virtual' => 'Virtuell',
+    'is_visible' => 'Sichtbar',
+    'name' => 'Name',
+    'no_locale_selected' => 'Keine Sprache ausgewählt',
+    'non_translatable_fields' => 'Nicht übersetzbares Feld',
+    'postal_code' => 'Postleitzahl',
+    'repairer_activation_mail_send' => 'Die Aktivierungsemail wurde bereits bei der Anmeldung verschickt.',
+    'repairer_deactivated' => 'Konto deaktiviert',
+    'street' => 'Strasse',
+    'street_number' => 'Nummer',
+    'website' => 'Webseite',
+    'automaticaly_calculated' => 'Diese wird anhand der Adresse berechnet und wird für die Reparaturorganisationssuche benötigt',
+
+    'approve_location_suggestion' => 'Approve location suggestion',
+    'location_suggestion_approved' => 'The location suggestion was approved, the data has been updated.',
+    'location_suggestion_already_approved' => 'The location suggestion was already approved.',
+    'action_prevent_multiple' => 'This action does not work with multiple entries.',
+];

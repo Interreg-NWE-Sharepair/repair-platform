@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="184px" height="129px" viewBox="0 0 184 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 18</title>
+    <g id="REPLOG-362" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Repair-Connects-→-Organisatie-(publiek)" transform="translate(-634.000000, -1047.000000)" stroke="#333333" stroke-width="0.5">
+            <g id="Group-15" transform="translate(173.000000, 493.000000)">
+                <g id="Group-21" transform="translate(0.000000, 483.000000)">
+                    <g id="Group-17" transform="translate(260.000000, 71.000000)">
+                        <g id="Group-18" transform="translate(201.500000, 0.000000)">
+                            <rect id="Rectangle" fill="#FFFFFF" x="0.25" y="13.25" width="155.5" height="115.5"></rect>
+                            <path d="M155.75,13.25 L171.75,29.1035534 L171.75,128.75 L155.75,128.75 L155.75,13.25 Z" id="Path-2" fill="#71B8C5"></path>
+                            <g id="Group-13" transform="translate(127.500000, 0.000000)">
+                                <polygon id="Path" fill="#333333" points="15 52 15 75 28 62 41 75 41 52"></polygon>
+                                <circle id="Oval" fill="#FF9623" cx="28" cy="28" r="27.75"></circle>
+                                <circle id="Oval" cx="28" cy="28" r="23.75"></circle>
+                                <g id="1" transform="translate(15.000000, 14.880000)" fill="#FFFFFF">
+                                    <path d="M13,0.564887865 L16.6545878,7.96989148 L24.8264944,9.15733902 L18.9132472,14.9213305 L20.3091755,23.060217 L13,19.2175561 L5.69082448,23.060217 L7.08675279,14.9213305 L1.17350557,9.15733902 L9.34541224,7.96989148 L13,0.564887865 Z" id="Star"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

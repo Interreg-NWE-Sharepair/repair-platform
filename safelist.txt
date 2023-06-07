@@ -1,0 +1,12 @@
+text-status-open
+text-status-reopened
+text-status-in_repair
+text-status-completed
+bg-status-open
+bg-status-reopened
+bg-status-in_repair
+bg-status-completed
+border-status-open
+border-status-reopened
+border-status-in_repair
+border-status-completed

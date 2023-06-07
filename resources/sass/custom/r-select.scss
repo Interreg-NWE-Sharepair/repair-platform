@@ -1,0 +1,8 @@
+// TODO: fix in repair components to show optional message independently of required input to able to used it as a filter and remove this
+.select__container {
+  label {
+    small {
+      display: none;
+    }
+  }
+}

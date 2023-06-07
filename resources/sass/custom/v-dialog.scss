@@ -1,0 +1,11 @@
+.v-dialog {
+  width: auto;
+}
+
+.v-dialog > .v-sheet > .v-card__text {
+  padding-bottom: 0 !important;
+}
+
+.v-dialog--persistent > .v-sheet > .v-card__text {
+  padding-bottom: 20px !important;
+}

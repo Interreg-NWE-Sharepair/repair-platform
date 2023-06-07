@@ -1,0 +1,3 @@
+node_modules
+resources/js/setup/ziggy.js
+vendor/tightenco/ziggy/dist/js/route.js

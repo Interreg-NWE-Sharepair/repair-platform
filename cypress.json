@@ -1,0 +1,6 @@
+{
+    "integrationFolder": "cypress/tests",
+    "env": {
+        "APP_URL": "https://replog.local.statik.be"
+    }
+}

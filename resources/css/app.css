@@ -1,0 +1,54 @@
+@import '@statikbe/repair-components/src/assets/css/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wysiwyg h1 {
+  @apply text-h1 text-primary;
+}
+
+.wysiwyg h2 {
+  @apply text-h2 text-primary;
+}
+
+.wysiwyg h3 {
+  @apply text-h3 text-primary;
+}
+
+.wysiwyg h4 {
+  @apply text-h4 text-primary;
+}
+
+.wysiwyg h5 {
+  @apply text-h5 text-primary;
+}
+
+.wysiwyg h6 {
+  @apply text-h6 text-primary;
+}
+
+.wysiwyg ol {
+  counter-reset: ol;
+}
+
+.wysiwyg li {
+  @apply relative mb-1 pl-6;
+}
+
+.wysiwyg li:before {
+  @apply block absolute top-0 left-0 font-bold text-primary;
+}
+
+.wysiwyg ol li:before {
+  counter-increment: ol;
+  content: counter(ol) '.';
+}
+
+.wysiwyg ul li:before {
+  content: '\2022';
+}
+
+div.section--default + div.section--default {
+  @apply pt-0 !important;
+}

@@ -1,0 +1,71 @@
+.v-btn {
+  box-shadow: none;
+
+  .v-btn__content {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &.primary {
+    .v-icon {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    &:hover {
+      &::before {
+        opacity: .15;
+        background-color: black;
+      }
+      .v-icon.v-icon--right {
+        transform: translate(8px, 0.125em) !important;
+      }
+    }
+  }
+  &.secondary {
+    .v-icon {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    &:hover {
+      &::before {
+        opacity: .15;
+        background-color: black;
+      }
+      .v-icon.v-icon--right {
+        transform: translate(8px, 0.125em) !important;
+      }
+    }
+  }
+}
+
+.v-btn:not(.v-btn--round).v-size--default {
+  height: 46px;
+}
+
+.v-btn.v-btn:not(.v-btn--icon) {
+  padding: 0.75rem 2rem;
+  .v-icon {
+    transform: translateY(0.125em);
+  }
+}
+
+.v-card__actions {
+  .v-btn--text {
+    margin-top: 0.25em;
+    padding: 0 !important;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// Delete nasty overwrite ;@
+.v-application .text-button {
+  font-size: 1rem !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}

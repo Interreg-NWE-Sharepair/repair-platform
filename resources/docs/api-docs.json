@@ -1,0 +1,1673 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Repair maps API",
+        "contact": {
+            "email": "support@statik.be"
+        },
+        "version": "1.0.2"
+    },
+    "servers": [
+        {
+            "url": "https://www.repairconnects.org/api/v1",
+            "description": "API Live Server"
+        },
+        {
+            "url": "https://replog.staging.statik.be/api/v1",
+            "description": "API Staging Server"
+        }
+    ],
+    "paths": {
+        "/activity_sectors/{uuid_or_code}": {
+            "get": {
+                "tags": [
+                    "Activity sectors"
+                ],
+                "summary": "Activity sectors",
+                "description": "Get an activity sector",
+                "operationId": "getActivitySector",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ActivitySectorResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/activity_sector_id_in_path_required"
+                }
+            ]
+        },
+        "/product_categories/{uuid_or_code}": {
+            "get": {
+                "tags": [
+                    "Device types"
+                ],
+                "summary": "Product category",
+                "description": "Get a product category (new endpoint: /device_types)",
+                "operationId": "getProductCategory",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceTypeResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": true
+            },
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/product_category_id_in_path_required"
+                }
+            ]
+        },
+        "/locations/{uuid_or_slug}": {
+            "get": {
+                "tags": [
+                    "Locations"
+                ],
+                "summary": "Location",
+                "description": "Get a location",
+                "operationId": "getLocation",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocationResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/location_id_in_path_required"
+                }
+            ]
+        },
+        "/locations/{uuid_or_slug}/suggestions": {
+            "post": {
+                "tags": [
+                    "Locations suggestion"
+                ],
+                "summary": "Suggest a change to a location",
+                "description": "Suggest a change to a location",
+                "operationId": "suggestNewLocation",
+                "requestBody": {
+                    "description": "Suggest a change to a location",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LocationSuggestion"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/location_id_in_path_required"
+                }
+            ]
+        },
+        "/organisation_types/{uuid_or_code}": {
+            "get": {
+                "tags": [
+                    "Organisation types"
+                ],
+                "summary": "Organisation types",
+                "description": "Get a organisation type",
+                "operationId": "getOrganisationType",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganisationTypeResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/organisation_type_id_in_path_required"
+                }
+            ]
+        },
+        "/activity_sectors": {
+            "get": {
+                "tags": [
+                    "Activity sectors"
+                ],
+                "summary": "Activity sectors",
+                "description": "Display a listing of activity sectors",
+                "operationId": "getActivitySectorList",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "example": "1"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "example": "10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ActivitySectorCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/completed_repair_statuses": {
+            "get": {
+                "tags": [
+                    "Completed repair statuses"
+                ],
+                "summary": "Completed repair statuses",
+                "description": "Display a listing of completed repair statuses",
+                "operationId": "getCompletedRepairStatusesList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CompletedRepairStatusCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/devices": {
+            "get": {
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Devices",
+                "description": "Display a listing of devices",
+                "operationId": "getDevicesList",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "example": "1"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "updated_after",
+                        "in": "query",
+                        "description": "All devices updated after a certain date. Using ISO 8601, can be a date or a datetime",
+                        "example": "2022-02-22T07:48:23Z"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/devices/log/completed": {
+            "post": {
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Log a new completed repair device",
+                "description": "Log a new completed repair device",
+                "operationId": "logCompletedDevice",
+                "requestBody": {
+                    "description": "Log a new completed device",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeviceLog"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/product_categories": {
+            "get": {
+                "tags": [
+                    "Device types"
+                ],
+                "summary": "Product categories",
+                "description": "Display a listing of product categories (new endpoint: /device_types)",
+                "operationId": "getProductCategoriesList",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "example": "1"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "example": "10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceTypeCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": true
+            }
+        },
+        "/device_types": {
+            "get": {
+                "tags": [
+                    "Device types"
+                ],
+                "summary": "Device types",
+                "description": "Display a listing of device types",
+                "operationId": "getDeviceTypesList",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "example": "1"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "example": "10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceTypeCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/device_types/{uuid_or_code}": {
+            "get": {
+                "tags": [
+                    "Device types"
+                ],
+                "summary": "Device type",
+                "description": "Get a device type",
+                "operationId": "getDeviceType",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeviceTypeResource"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/locations": {
+            "get": {
+                "tags": [
+                    "Locations"
+                ],
+                "summary": "Locations",
+                "description": "Display a listing of locations",
+                "operationId": "getLocationsList",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    },
+                    {
+                        "name": "organisation_types",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated types",
+                        "examples": {
+                            "7b404df9-bdcb-4a69-8588-507242d25044": {
+                                "summary": "Uuid",
+                                "value": "7b404df9-bdcb-4a69-8588-507242d25044"
+                            },
+                            "professional_repairer": {
+                                "summary": "Code",
+                                "value": "professional_repairer"
+                            },
+                            "multiple": {
+                                "summary": "Multiple options",
+                                "value": "c3f479e8-e35b-43bf-83b9-64a0b4ae1a6e, 7b404df9-bdcb-4a69-8588-507242d25044"
+                            }
+                        }
+                    },
+                    {
+                        "name": "product_categories",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated categories",
+                        "deprecated": true,
+                        "examples": {
+                            "3349056e-2c68-4a51-a30c-91c5fed8c033": {
+                                "summary": "Uuid",
+                                "value": "3349056e-2c68-4a51-a30c-91c5fed8c033"
+                            },
+                            "desktop-computer": {
+                                "summary": "Code",
+                                "value": "desktop-computer"
+                            },
+                            "multiple": {
+                                "summary": "Multiple options",
+                                "value": "3349056e-2c68-4a51-a30c-91c5fed8c033, 63ed5d48-a85f-4f95-883c-7cf09819fe54"
+                            }
+                        }
+                    },
+                    {
+                        "name": "device_types",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated types",
+                        "examples": {
+                            "3349056e-2c68-4a51-a30c-91c5fed8c033": {
+                                "summary": "Uuid",
+                                "value": "3349056e-2c68-4a51-a30c-91c5fed8c033"
+                            },
+                            "desktop-computer": {
+                                "summary": "Code",
+                                "value": "desktop-computer"
+                            },
+                            "multiple": {
+                                "summary": "Multiple options",
+                                "value": "3349056e-2c68-4a51-a30c-91c5fed8c033, 63ed5d48-a85f-4f95-883c-7cf09819fe54"
+                            }
+                        }
+                    },
+                    {
+                        "name": "bbox",
+                        "in": "query",
+                        "description": "To search by a box of latitude and longitude: minLat, minLong, maxLat, maxLong",
+                        "example": "51.2867602,-0.5103751,51.6918741,0.3340155"
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "example": "1"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "example": "10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocationCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/locations/suggestions": {
+            "post": {
+                "tags": [
+                    "Locations suggestion"
+                ],
+                "summary": "Suggest a new location",
+                "description": "Suggest a new location",
+                "operationId": "suggestLocation",
+                "requestBody": {
+                    "description": "Create new suggestion",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LocationSuggestion"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/organisation_types": {
+            "get": {
+                "tags": [
+                    "Organisation types"
+                ],
+                "summary": "Organisation types",
+                "description": "Display a listing of organisation types",
+                "operationId": "getOrganisationTypesList",
+                "parameters": [
+                    {
+                        "name": "locales",
+                        "in": "query",
+                        "description": "You can add multiple comma seperated locales",
+                        "example": "nl"
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "example": "10"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "example": "1"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "example": "10"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganisationTypeCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ActivitySectorCollection": {
+                "title": "ActivitySectorCollection",
+                "description": "Activity sector collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ActivitySector"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "ActivitySectorCollection"
+                }
+            },
+            "ActivitySectorResource": {
+                "title": "ActivitySectorResource",
+                "description": "Activity sector resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/ActivitySector"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "ActivitySectorResource"
+                }
+            },
+            "CompletedRepairStatusCollection": {
+                "title": "CompletedRepairStatusCollection",
+                "description": "Completed repair status collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CompletedRepairStatus"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "CompletedRepairStatusCollection"
+                }
+            },
+            "CompletedRepairStatusResource": {
+                "title": "CompletedRepairStatusResource",
+                "description": "Completed repair status resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/CompletedRepairStatus"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "CompletedRepairStatusResource"
+                }
+            },
+            "ContactDetailCollection": {
+                "title": "LocationContactCollection",
+                "description": "Location contact collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "website": {
+                                    "title": "Type",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LocationContact"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LocationContactCollection"
+                }
+            },
+            "ContactDetailResource": {
+                "title": "LocationContactResource",
+                "description": "Location contact resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/LocationContact"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LocationContactResource"
+                }
+            },
+            "DeviceCollection": {
+                "title": "DeviceCollection",
+                "description": "Device collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Device"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeviceCollection"
+                }
+            },
+            "DeviceResource": {
+                "title": "DeviceResource",
+                "description": "Device resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/Device"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeviceResource"
+                }
+            },
+            "DeviceTypeCollection": {
+                "title": "DeviceTypeCollection",
+                "description": "Device type collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DeviceType"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeviceTypeCollection"
+                }
+            },
+            "DeviceTypeResource": {
+                "title": "DeviceTypeResource",
+                "description": "Device type resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/DeviceType"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeviceTypeResource"
+                }
+            },
+            "LocationCollection": {
+                "title": "LocationCollection",
+                "description": "Location collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Location"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LocationCollection"
+                }
+            },
+            "LocationResource": {
+                "title": "LocationResource",
+                "description": "Location resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/Location"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LocationResource"
+                }
+            },
+            "OrganisationTypeCollection": {
+                "title": "OrganisationTypeCollection",
+                "description": "Organisation Type collection",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OrganisationType"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "OrganisationTypeCollection"
+                }
+            },
+            "OrganisationTypeResource": {
+                "title": "OrganisationTypeResource",
+                "description": "Organisation type resource",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/OrganisationType"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "OrganisationTypeResource"
+                }
+            },
+            "Location": {
+                "title": "Location",
+                "description": "Location model",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "example": "c6f570f6-4b02-4f33-a76d-2386f894ef5b"
+                    },
+                    "name": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "Huis Jerome Collin"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "slug": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "huis-jerome-collin"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "description": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "Eigen herstel- en leveringsdienst ..."
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "product_description": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "Eigen herstel- en leveringsdienst ..."
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "address_formatted": {
+                        "type": "string",
+                        "example": "Aarschotsesteenweg 22, 3000 Wilsele, Belgium"
+                    },
+                    "geometry": {
+                        "$ref": "#/components/schemas/Geometry"
+                    },
+                    "has_warranty": {
+                        "type": "boolean",
+                        "example": "true"
+                    },
+                    "warranty_description": {
+                        "properties": {
+                            "en": {
+                                "type": "string",
+                                "example": "2 years"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "organisation_type": {
+                        "$ref": "#/components/schemas/OrganisationType"
+                    },
+                    "product_categories": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DeviceType"
+                        },
+                        "deprecated": true
+                    },
+                    "device_types": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DeviceType"
+                        }
+                    },
+                    "activity_sectors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ActivitySector"
+                        }
+                    },
+                    "contacts": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "website": {
+                                    "title": "Type",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LocationContact"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "locales": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "example": "nl"
+                        }
+                    },
+                    "active_on_repair_connects": {
+                        "type": "boolean",
+                        "example": "true"
+                    },
+                    "active_repairers_count": {
+                        "type": "integer",
+                        "example": "10"
+                    },
+                    "repaired_devices_count": {
+                        "type": "integer",
+                        "example": "34"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Location"
+                }
+            },
+            "OrganisationType": {
+                "title": "OrganisationType",
+                "description": "OrganisationType model",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "example": "c6f570f6-4b02-4f33-a76d-2386f894ef5b"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "professional_repairer"
+                    },
+                    "name": {
+                        "properties": {
+                            "en": {
+                                "type": "string",
+                                "example": "Professional repairer"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "OrganisationType"
+                }
+            },
+            "DeviceType": {
+                "title": "Device type",
+                "description": "DeviceType model",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "example": "c6f570f6-4b02-4f33-a76d-2386f894ef5b"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "home-entertainment"
+                    },
+                    "name": {
+                        "properties": {
+                            "en": {
+                                "type": "string",
+                                "example": "Home Entertainment"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "ords_code": {
+                        "type": "string",
+                        "example": "1"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeviceType"
+                }
+            },
+            "CompletedRepairStatus": {
+                "title": "Completed repair status",
+                "description": "CompletedRepairStatus model",
+                "properties": {
+                    "ords_code": {
+                        "type": "string",
+                        "example": "0"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "fixed"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "CompletedRepairStatus"
+                }
+            },
+            "ActivitySector": {
+                "title": "ActivitySector",
+                "description": "ActivitySector model",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "example": "c6f570f6-4b02-4f33-a76d-2386f894ef5b"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "example_activity_sector"
+                    },
+                    "name": {
+                        "properties": {
+                            "en": {
+                                "type": "string",
+                                "example": "Activity sector"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "ActivitySector"
+                }
+            },
+            "LocationContact": {
+                "title": "LocationContact",
+                "description": "LocationContact model",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "statik.be"
+                    },
+                    "value": {
+                        "type": "string",
+                        "example": "https://statik.be"
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "website"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LocationContact"
+                }
+            },
+            "Address": {
+                "title": "Address",
+                "description": "Address",
+                "properties": {
+                    "street": {
+                        "type": "string",
+                        "example": "Tervuursesteenweg"
+                    },
+                    "number": {
+                        "type": "string",
+                        "example": "13"
+                    },
+                    "bus": {
+                        "type": "string"
+                    },
+                    "postal_code": {
+                        "type": "string",
+                        "example": "3000"
+                    },
+                    "city": {
+                        "type": "string",
+                        "example": "Leuven"
+                    },
+                    "country": {
+                        "type": "string",
+                        "example": "Belgium"
+                    },
+                    "country_code": {
+                        "type": "string",
+                        "example": "BE"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Address"
+                }
+            },
+            "Geometry": {
+                "title": "Geometry",
+                "description": "Geometry",
+                "properties": {
+                    "latitude": {
+                        "type": "string",
+                        "example": "50.879845"
+                    },
+                    "longitude": {
+                        "type": "string",
+                        "example": "4.700518"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Geometry"
+                }
+            },
+            "LocationSuggestion": {
+                "title": "LocationSuggestion",
+                "description": "Location suggestion",
+                "required": [
+                    "address",
+                    "has_warranty",
+                    "organisation_type",
+                    "locales",
+                    "submitter_email",
+                    "accepted_privacy",
+                    "accepted_general_terms",
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "Huis Jerome Collin"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "description": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "Eigen herstel- en leveringsdienst ..."
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "product_description": {
+                        "properties": {
+                            "nl": {
+                                "type": "string",
+                                "example": "Eigen herstel- en leveringsdienst ..."
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "has_warranty": {
+                        "type": "boolean",
+                        "example": "true"
+                    },
+                    "warranty_info": {
+                        "properties": {
+                            "en": {
+                                "type": "string",
+                                "example": "2 years"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "organisation_type": {
+                        "type": "string",
+                        "example": "c3f479e8-e35b-43bf-83b9-64a0b4ae1a6e"
+                    },
+                    "device_types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "example": "3bb9f73a-d0b4-431d-806f-4fa89087b773"
+                        }
+                    },
+                    "activity_sectors": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "example": "c6f570f6-4b02-4f33-a76d-2386f894ef5b"
+                        }
+                    },
+                    "contacts": {
+                        "properties": {
+                            "website": {
+                                "title": "Type",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/LocationContact"
+                                }
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "locales": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "example": "nl"
+                        }
+                    },
+                    "submitter_email": {
+                        "type": "string",
+                        "example": "test@mail.com"
+                    },
+                    "submitter_relation": {
+                        "type": "string",
+                        "example": "I work at this location"
+                    },
+                    "accepted_privacy": {
+                        "type": "boolean",
+                        "example": "true"
+                    },
+                    "accepted_general_terms": {
+                        "type": "boolean",
+                        "example": "true"
+                    },
+                    "logo": {
+                        "type": "base64",
+                        "example": "base64Image"
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "base64",
+                            "example": "base64Image"
+                        }
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LocationSuggestion"
+                }
+            },
+            "Device": {
+                "title": "Device",
+                "description": "Device",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "example": "be19b710-a4f6-46c4-8956-43166426490b"
+                    },
+                    "brand_name": {
+                        "type": "string",
+                        "example": "Philips"
+                    },
+                    "model_name": {
+                        "type": "string",
+                        "example": "32PFL3606H/12"
+                    },
+                    "manufacture_year": {
+                        "type": "string",
+                        "format": "year",
+                        "example": "2019"
+                    },
+                    "device_type": {
+                        "$ref": "#/components/schemas/DeviceType"
+                    },
+                    "device_description": {
+                        "type": "string",
+                        "example": "Philips television lcd 32inch"
+                    },
+                    "issue_description": {
+                        "type": "string",
+                        "example": "Screen broken"
+                    },
+                    "organisation": {
+                        "properties": {
+                            "uuid": {
+                                "type": "string",
+                                "example": "efe298d6-dd47-4272-96a2-dd974141a854"
+                            },
+                            "name": {
+                                "properties": {
+                                    "en": {
+                                        "type": "string",
+                                        "example": "Repair Café"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": {
+                                "$ref": "#/components/schemas/OrganisationType"
+                            },
+                            "country": {
+                                "type": "string",
+                                "example": "Belgium"
+                            },
+                            "country_code": {
+                                "type": "string",
+                                "example": "BE"
+                            },
+                            "postal_code": {
+                                "type": "string",
+                                "example": "3000"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "owner_postal_code": {
+                        "type": "string",
+                        "example": "3000"
+                    },
+                    "locale": {
+                        "type": "string",
+                        "example": "nl"
+                    },
+                    "fix_description": {
+                        "type": "string",
+                        "example": "NOT FIXED: LCD should be replaced, but it is too expensive."
+                    },
+                    "diagnosis": {
+                        "type": "string",
+                        "example": "No image on the screen"
+                    },
+                    "root_cause": {
+                        "type": "string",
+                        "example": "Broken lcd panel"
+                    },
+                    "completed_status": {
+                        "type": "string",
+                        "example": "archive"
+                    },
+                    "barrier": {
+                        "type": "string",
+                        "example": "SPARE_PARTS_NOT_AVAILABLE"
+                    },
+                    "ords": {
+                        "properties": {
+                            "repair_status": {
+                                "type": "integer",
+                                "example": "1"
+                            },
+                            "repair_barrier_if_end_of_life": {
+                                "type": "integer",
+                                "example": "1"
+                            },
+                            "product_category": {
+                                "type": "integer",
+                                "example": "1"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "public_url": {
+                        "type": "string",
+                        "format": "url",
+                        "example": "https://repairconnects.org/en/device/repaired/philips-3"
+                    },
+                    "completed_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2020-05-12T07:07:07.000000Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2020-05-12T07:07:07.000000Z"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2020-05-12T07:07:07.000000Z"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Device"
+                }
+            },
+            "DeviceLog": {
+                "title": "DeviceLog",
+                "description": "Device Log",
+                "required": [
+                    "brand_name",
+                    "device_type",
+                    "location",
+                    "locale",
+                    "completed_status"
+                ],
+                "properties": {
+                    "brand_name": {
+                        "type": "string",
+                        "example": "Philips"
+                    },
+                    "model_name": {
+                        "type": "string",
+                        "example": "32PFL3606H/12"
+                    },
+                    "device_description": {
+                        "type": "string",
+                        "example": "Philips television lcd 32inch"
+                    },
+                    "device_type": {
+                        "type": "string",
+                        "example": "0dcdac41-6f84-4b08-9a01-890275524c06"
+                    },
+                    "issue_description": {
+                        "type": "string",
+                        "example": "Screen broken"
+                    },
+                    "fix_description": {
+                        "type": "string",
+                        "example": "Replaced the lcd panel"
+                    },
+                    "used_materials": {
+                        "type": "string",
+                        "example": "LCD panel"
+                    },
+                    "is_using_spare_parts": {
+                        "type": "boolean",
+                        "example": "true"
+                    },
+                    "location": {
+                        "type": "string",
+                        "example": "efe298d6-dd47-4272-96a2-dd974141a854"
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "example": "John"
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Doe"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "john.doe@email.com"
+                    },
+                    "telephone": {
+                        "type": "string",
+                        "example": "0412345678"
+                    },
+                    "postal_code": {
+                        "type": "string",
+                        "example": "3000"
+                    },
+                    "locale": {
+                        "type": "string",
+                        "example": "nl"
+                    },
+                    "manufacture_year": {
+                        "type": "string",
+                        "format": "year",
+                        "example": "2019"
+                    },
+                    "completed_status": {
+                        "type": "string",
+                        "example": "fixed"
+                    },
+                    "closed_at": {
+                        "type": "date",
+                        "example": "2021-10-15"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "DeviceLog"
+                }
+            }
+        },
+        "parameters": {
+            "location_id_in_path_required": {
+                "name": "uuid_or_slug",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "organisation_type_id_in_path_required": {
+                "name": "uuid_or_code",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "product_category_id_in_path_required": {
+                "name": "uuid_or_code",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "repair_status_id_in_path_required": {
+                "name": "uuid_or_code",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "activity_sector_id_in_path_required": {
+                "name": "uuid_or_code",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Changelog",
+        "url": "changelog"
+    },
+    "security": [
+        []
+    ]
+}

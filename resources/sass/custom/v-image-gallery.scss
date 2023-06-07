@@ -1,0 +1,24 @@
+.v-image-gallery {
+    &:not(.is-open) * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+.v-image-gallery__item,
+.v-image-gallery__carousel,
+.v-carousel__item {
+    height: auto !important;
+}
+
+.v-image-gallery__image {
+    max-height: 100%;
+}
+
+.v-image-gallery__download {
+    display: block;
+    background-color: #272727;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 10px;
+}

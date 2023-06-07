@@ -1,0 +1,433 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIY - Testaankoop</title>
+  <link href="/repgui/css/main.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://use.typekit.net/wci0nji.css">
+  <style>
+    body {
+      font-family: "p22-mackinac-pro",Verdana,Arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h3 {
+      color: #0e6651;
+      font-weight: 700 !important;
+    }
+    .link {
+      color: #0e6651;
+      text-decoration: none;
+    }
+    .link::after {
+      color: #0e6651;
+    }
+    .link:hover {
+      color: #0e6651;
+      text-decoration: underline;
+    }
+    .link:hover::after {
+      color: #0e6651;
+    }
+    .rounded-card {
+      border-radius: 0;
+      background-color: #F4F4F5;
+    }
+    .rounded-card:hover {
+        background-color: #E4E4E7;
+    }
+    .text-primary {
+        color: #0F6651;
+    }
+    .bg-primary {
+      background-color: #0F6651;
+    }
+    .border-primary {
+        border-color: #0F6651;
+    }
+    .pagination button {
+      color: #0F6651;
+    }
+    .pagination button:hover {
+      background: #E4E4E7;
+      border-color: #E4E4E7;
+      color: #0F6651;
+    }
+  </style>
+</head>
+<body class="antialiased">
+    <div class="section section--light">
+        <div class="container">
+            <div class="w-full md:w-3/4">
+                <div class="flex flex-wrap items-end -mx-2 -mt-4">
+                    <div class="w-full px-2 mt-4 md:w-3/4 input-container">
+                        <label class="text-xl form__label" for="search">Enter search term</label>
+                        <input class="w-full px-4 py-2 mb-0 border-1 border-primary" wire:model.defer="search" type="text" placeholder="e.g. safety switch">
+                    </div>
+                    <div class="w-full px-2 mt-4 md:w-1/4 submit-container">
+                        <button class="px-4 py-2 text-white hover:text-green-900 bg-primary border-1 hover:bg-transparent border-primary" wire:click="search">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-end w-full md:w-3/4">
+                <div class="mt-2 text-sm leading-none text-gray-600">Je kan zoeken op een specifieke zoekterm zoals bv. Strijkijzer of batterij</div>
+            </div>
+                            <div class="mt-6 md:mt-8">
+                    <label class="text-xl form__label" for="type">Or select a product type</label>
+                    <ul class="mb-4 space-y-1">
+                        <li>
+                            <label for="no-filter">
+                                <input wire:model="type" id="no-filter" type="radio" name="type" value="" style="accent-color: #0F6651" checked /> No filter selected
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap" style="gap: 2rem;">
+                                                    <ul class="space-y-1">
+                                <li class="font-semibold">Kitchen and Household items</li>
+                                                                    <li>
+                                        <label for="label-0e57622f-e27f-4afa-8588-9590a622361d">
+                                            <input wire:model="type" id="label-0e57622f-e27f-4afa-8588-9590a622361d" type="radio" name="type" value="0e57622f-e27f-4afa-8588-9590a622361d" style="accent-color: #0F6651"> Toaster
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-f30db934-bd13-4620-9661-0ab1c6ab5c10">
+                                            <input wire:model="type" id="label-f30db934-bd13-4620-9661-0ab1c6ab5c10" type="radio" name="type" value="f30db934-bd13-4620-9661-0ab1c6ab5c10" style="accent-color: #0F6651"> Coffee Maker
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-6465600c-39de-4057-9598-3ecb2eaf544e">
+                                            <input wire:model="type" id="label-6465600c-39de-4057-9598-3ecb2eaf544e" type="radio" name="type" value="6465600c-39de-4057-9598-3ecb2eaf544e" style="accent-color: #0F6651"> Blender
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-2b16a416-b10b-4f13-b4ff-b67ec7366c52">
+                                            <input wire:model="type" id="label-2b16a416-b10b-4f13-b4ff-b67ec7366c52" type="radio" name="type" value="2b16a416-b10b-4f13-b4ff-b67ec7366c52" style="accent-color: #0F6651"> Iron
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-2d23c16d-cc40-444f-a827-750e85e9755d">
+                                            <input wire:model="type" id="label-2d23c16d-cc40-444f-a827-750e85e9755d" type="radio" name="type" value="2d23c16d-cc40-444f-a827-750e85e9755d" style="accent-color: #0F6651"> Washing machine
+                                        </label>
+                                    </li>
+                                                            </ul>
+                                                        <ul class="space-y-1">
+                                <li class="font-semibold">Computers and Home Office</li>
+                                                                    <li>
+                                        <label for="label-81e99aea-b3ef-469a-90d8-aa9547109e86">
+                                            <input wire:model="type" id="label-81e99aea-b3ef-469a-90d8-aa9547109e86" type="radio" name="type" value="81e99aea-b3ef-469a-90d8-aa9547109e86" style="accent-color: #0F6651"> Inkjet printer
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-530fa21e-6ccb-48c5-b162-78fbdecf6c67">
+                                            <input wire:model="type" id="label-530fa21e-6ccb-48c5-b162-78fbdecf6c67" type="radio" name="type" value="530fa21e-6ccb-48c5-b162-78fbdecf6c67" style="accent-color: #0F6651"> Laser printer
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-2959dd46-8b0b-415c-96ff-ae12e99d74c1">
+                                            <input wire:model="type" id="label-2959dd46-8b0b-415c-96ff-ae12e99d74c1" type="radio" name="type" value="2959dd46-8b0b-415c-96ff-ae12e99d74c1" style="accent-color: #0F6651"> Windows laptop
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-40547855-f548-43b4-9710-e920f8d0a40e">
+                                            <input wire:model="type" id="label-40547855-f548-43b4-9710-e920f8d0a40e" type="radio" name="type" value="40547855-f548-43b4-9710-e920f8d0a40e" style="accent-color: #0F6651"> Laptop MacOS
+                                        </label>
+                                    </li>
+                                                            </ul>
+                                                        <ul class="space-y-1">
+                                <li class="font-semibold">Electronic gadgets</li>
+                                                                    <li>
+                                        <label for="label-f943ff73-9cff-4fd9-bec9-37ca603607bc">
+                                            <input wire:model="type" id="label-f943ff73-9cff-4fd9-bec9-37ca603607bc" type="radio" name="type" value="f943ff73-9cff-4fd9-bec9-37ca603607bc" style="accent-color: #0F6651"> Smartphones Android
+                                        </label>
+                                    </li>
+                                                                    <li>
+                                        <label for="label-4afa99d1-f5a4-4aa0-bc77-304c6a01aacd">
+                                            <input wire:model="type" id="label-4afa99d1-f5a4-4aa0-bc77-304c6a01aacd" type="radio" name="type" value="4afa99d1-f5a4-4aa0-bc77-304c6a01aacd" style="accent-color: #0F6651"> Smartphone Apple
+                                        </label>
+                                    </li>
+                                                            </ul>
+                                                    
+                    </div>
+                </div>
+                                </div>
+    </div>
+  <div class="section section--default">
+        <div class="container">
+            <div wire:loading.grid="">
+                <div class="hidden loader">
+                  <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <polygon class="bolt" fill="#71B8C5" points="12.5 75 20.7272413 79.75 20.7272413 89.25 12.5 94 4.27275866 89.25 4.27275866 79.75"></polygon>
+                      <g class="wrench">
+                        <path d="M9.35501036,0 C15.5022265,0 20.6529077,4.26667343 22.0071816,10.000148 L42.3550104,10 L42.3550104,16 L22.0069446,16.0008554 C20.6523067,21.7338244 15.5018679,26 9.35501036,26 C6.21162834,26 3.32881961,24.8843531 1.08094833,23.0274235 L9.35501036,23.0262794 L14.8550104,13.5 L9.35501036,3.97372056 L4.4408921e-15,3.97314469 C2.36422274,1.52352 5.68169797,0 9.35501036,0 Z" id="Combined-Shape" fill="#D8D8D8"></path>
+                        <rect fill="#7C6178" x="34.3550104" y="7" width="45" height="12" rx="2"></rect>
+                      </g>
+                  </svg>
+                  <div class="mt-2">Loading...</div>
+                </div>
+              </div>
+            <div wire:loading.remove="">
+                <div class="mb-4 font-semibold"><div>
+    <p class="text-xl text-black">
+        <span>Displaying</span>
+        <span class="font-medium">1</span>
+        <span> - </span>
+        <span class="font-medium">9</span>
+        <span>of</span>
+        <span class="font-medium">87</span>
+        <span>repair guides</span>
+    </p>
+</div>
+</div>
+<div class="flex flex-wrap -mx-2 -mt-4">
+  <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            How to identify and solve a problem with the safety switch?
+        </h3>
+                  <span class="text-base font-bold">Blender</span>
+                            <span class="text-sm font-thin">The appliance does not switch on</span>
+                <div class="my-4">
+                            Safety switches are one of the main causes of blender and food processor malfunctions. So first of all, check whether all safety components described in the user manual are fitted to the appliance.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/how-to-identify-and-solve-a-problem-with-the-safety-switch">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            Damaged power cable
+        </h3>
+                  <span class="text-base font-bold">Blender</span>
+                            <span class="text-sm font-thin">The appliance does not switch on</span>
+                <div class="my-4">
+                            Power cables transmit electrical power to appliances. If the power cable is damaged and the connection to the power supply is interrupted, your appliance will not work.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/damaged-power-cable">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            Overheating of the motor
+        </h3>
+                  <span class="text-base font-bold">Blender</span>
+                            <span class="text-sm font-thin">The appliance does not switch on</span>
+                <div class="my-4">
+                            The motors of immersion blenders or food processors are not designed to run for long periods. If the blender is used for a longer stretch of time than the ‘normal’ advised operating time, the device will overheat and the motor may burn out beyond repair.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/overheating-of-the-motor">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            How to check if you are using the device correctly?
+        </h3>
+                  <span class="text-base font-bold">Blender</span>
+                            <span class="text-sm font-thin">The appliance turns on or off by itself, operates intermittently or the lights come on randomly</span>
+                <div class="my-4">
+                            Even if you think you know your device inside out, it may have features you don't know about.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/how-to-check-if-you-are-using-the-device-correctly">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            Electronic problem
+        </h3>
+                  <span class="text-base font-bold">Blender</span>
+                            <span class="text-sm font-thin">The appliance turns on or off by itself, operates intermittently or the lights come on randomly</span>
+                <div class="my-4">
+                            Electronic components are increasingly present in all "modern" household appliances. While they increase the functionality of the appliance, they also considerably increase the risk of problems.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/electronic-problem">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            Problem with the coupling between the accessory and the device
+        </h3>
+                  <span class="text-base font-bold">Blender</span>
+                            <span class="text-sm font-thin">The appliance switches on, but one or more accessories no longer work</span>
+                <div class="my-4">
+                            A mixer normally consists of a motor and one or more accessories that can be coupled to it. The critical point of these appliances is therefore the coupling between the motor and the accessory.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/problem-with-the-coupling-between-the-accessory-and-the-device">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            The battery discharges too quickly
+        </h3>
+                  <span class="text-base font-bold">Windows laptop</span>
+                            <span class="text-sm font-thin">The battery discharges too quickly</span>
+                <div class="my-4">
+                            Batteries charge and discharge again. Each time this happens, the battery loses a little capacity and the life of a charge is shortened.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/the-battery-discharges-too-quickly">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            There is no wifi connection
+        </h3>
+                  <span class="text-base font-bold">Windows laptop</span>
+                            <span class="text-sm font-thin">There is no wifi connection</span>
+                <div class="my-4">
+                            Wi-Fi problems can have many different causes, which are not always related to your own device. If you cannot connect to the Internet, you may see an empty Wi-Fi icon in the taskbar of your device. Fortunately, there are some steps you can take. Some are easier than others.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/there-is-no-wifi-connection">View guide</a>
+    </div>
+</div>
+                                            <div class="w-full px-2 mt-4 sm:w-1/2 lg:w-1/3">
+    <div class="relative flex flex-col h-full p-6 bg-light rounded-card">
+        <h3 class="mb-3 text-2xl font-semibold ">
+            <svg class="flex-shrink-0 mb-1 mr-1 icon" aria-hidden="true">
+                <use xlink:href="/repgui/icon/sprite.svg#file-document"></use>
+            </svg>
+            Is there a problem with your device?
+        </h3>
+                  <span class="text-base font-bold">Windows laptop</span>
+                            <span class="text-sm font-thin">There is no wifi connection</span>
+                <div class="my-4">
+                            Wifi problems can have various causes, which are not always related to your own device.
+                    </div>
+        <a class="mt-auto link link--ext link--extended" href="https://repgui.local.statik.be/en/tutorial/is-there-a-problem-with-your-device">View guide</a>
+    </div>
+</div>
+                                        <div class="flex justify-center w-full mt-8 sm:mt-10">
+                        <div>
+            
+        <nav role="navigation" aria-label="Pagination" class="flex items-center justify-between pagination">
+            <div class="flex justify-between flex-1 sm:hidden">
+                <span>
+                                            <span class="relative inline-flex items-center px-4 py-2 text-sm font-bold leading-5 text-gray-500 cursor-default">
+                            « Previous
+                        </span>
+                                    </span>
+
+                <span>
+                                            <button wire:click="nextPage('page')" wire:loading.attr="disabled" dusk="nextPage.before" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700" data-ol-has-click-handler="">
+                            Next »
+                        </button>
+                                    </span>
+            </div>
+
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                    <span class="relative z-0 inline-flex">
+                        <span>
+                            
+                                                            <span aria-disabled="true" aria-label="&amp;laquo; Previous">
+                                    <span class="relative inline-flex items-center px-2 py-2 text-sm font-bold leading-5 text-gray-500 cursor-default" aria-hidden="true">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                                                    </span>
+
+                        
+                                                    
+                            
+                            
+                                                                                                <span wire:key="paginator-page-1-page1">
+                                                                                    <span aria-current="page">
+                                                <span class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-white border cursor-default border-primary bg-primary">1</span>
+                                            </span>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page2">
+                                                                                    <button wire:click="gotoPage(2, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 2" data-ol-has-click-handler="">
+                                                2
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page3">
+                                                                                    <button wire:click="gotoPage(3, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 3" data-ol-has-click-handler="">
+                                                3
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page4">
+                                                                                    <button wire:click="gotoPage(4, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 4" data-ol-has-click-handler="">
+                                                4
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page5">
+                                                                                    <button wire:click="gotoPage(5, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 5" data-ol-has-click-handler="">
+                                                5
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page6">
+                                                                                    <button wire:click="gotoPage(6, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 6" data-ol-has-click-handler="">
+                                                6
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page7">
+                                                                                    <button wire:click="gotoPage(7, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 7" data-ol-has-click-handler="">
+                                                7
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page8">
+                                                                                    <button wire:click="gotoPage(8, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 8" data-ol-has-click-handler="">
+                                                8
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page9">
+                                                                                    <button wire:click="gotoPage(9, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 9" data-ol-has-click-handler="">
+                                                9
+                                            </button>
+                                                                            </span>
+                                                                    <span wire:key="paginator-page-1-page10">
+                                                                                    <button wire:click="gotoPage(10, 'page')" class="relative inline-flex items-center px-4 py-2 mx-1 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border bg-light border-light hover:text-white hover:bg-primary hover:border-primary focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700" aria-label="Go to page 10" data-ol-has-click-handler="">
+                                                10
+                                            </button>
+                                                                            </span>
+                                                                                    
+                        <span>
+                            
+                                                            <button wire:click="nextPage('page')" dusk="nextPage.after" rel="next" class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-bold leading-5 transition duration-150 ease-in-out text-primary hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500" aria-label="Next &amp;raquo;" data-ol-has-click-handler="">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                                    </span>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</body>
+</html>

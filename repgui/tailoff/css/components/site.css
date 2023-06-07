@@ -1,0 +1,195 @@
+/* purgecss start ignore */
+
+.menu__item {
+  @apply py-2 text-center border-transparent border-b-3;
+
+  &.active {
+    @apply font-bold text-primary;
+  }
+  &:hover {
+    @apply font-bold border-primary-300;
+  }
+  &::after {
+    content: attr(data-text);
+    content: attr(data-text) / "";
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    font-weight: bold;
+    display: block;
+  }
+}
+
+.skew-dividers {
+  > div {
+    @apply relative py-3;
+
+    &::after {
+      @apply absolute top-0 left-0 right-0 opacity-50 bg-divider;
+      height: 2px;
+      transform: rotate(-1deg);
+      content: "";
+    }
+
+    &:first-child::after {
+      display: none;
+    }
+  }
+}
+
+@screen sm {
+  .skew-dividers {
+    > div {
+      @apply py-0;
+      
+      &::after {
+        @apply bottom-0 right-0 left-auto opacity-75;
+        width: 2px;
+        height: auto;
+        transform: rotate(12deg);
+        content: "";
+      }
+
+      &:first-child::after {
+        display: block;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.quote {
+  @apply pt-16 text-3xl italic font-semibold text-center text-secondary;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url(/img/quotes.svg);
+  &::before {
+    content: "“";
+  }
+  &::after {
+    content: "”";
+  }
+}
+
+@screen md {
+  .quote {
+    @apply text-5xl;
+  }
+}
+
+.category-toggle {
+  @apply mb-4;
+
+  label {
+    @apply flex items-center px-6 py-1 font-bold tracking-wider bg-white rounded-full cursor-pointer text-secondary;
+
+    svg {
+      @apply hidden ml-2;
+    }
+
+    &:hover {
+      @apply text-white bg-secondary-hover;
+    }
+  }
+
+  input:checked + label {
+    @apply pr-3 text-white bg-secondary;
+
+    svg {
+      @apply inline-block mr-1;
+    }
+
+    &:hover {
+      @apply bg-secondary-hover;
+    }
+  }
+}
+
+#heroNr1,
+#heroNr2,
+#heroNr3,
+#heroNr4 {
+  @apply flex mb-2;
+  span {
+    @apply block mr-2 text-xl font-bold leading-none;
+  }
+}
+
+#heroNr1,
+#heroNr2,
+#heroNr3 {
+  @apply relative pl-5;
+
+  @mixin icon-before chevron-right;
+
+  &::before {
+    @apply absolute left-0 text-primary;
+    @apply text-base;
+    top: 4px;
+  }
+}
+
+#heroNr4 {
+  @apply font-black text-secondary;
+}
+
+@screen sm {
+  #heroNr1 {
+    left: 41.7%;
+    top: 75.9%;
+  }
+
+  #heroNr2 {
+    right: 0;
+    top: 31%;
+  }
+
+  #heroNr3 {
+    left: 12.5%;
+    top: 12%;
+  }
+
+  #heroNr4 {
+    top: 5%;
+    right: 45%;
+  }
+
+  #heroNr1,
+  #heroNr2,
+  #heroNr3,
+  #heroNr4 {
+    @apply absolute flex flex-col items-center justify-center w-32 h-32 p-2 mb-0 leading-none text-center break-words bg-white rounded-full text-xs text-secondary;
+    span {
+      @apply block m-0 text-xl font-black;
+    }
+    &::before {
+      @apply hidden;
+    }
+  }
+  #heroNr4 {
+    @apply font-normal text-white bg-secondary;
+  }
+}
+
+@screen xl {
+  #heroNr1,
+  #heroNr2,
+  #heroNr3,
+  #heroNr4 {
+    @apply absolute w-40 h-40 text-base leading-none break-words;
+    span {
+      @apply block mb-1 text-2xl font-black;
+    }
+  }
+}
+
+#heroLegend {
+  @apply mt-2 mb-2 text-xs leading-none opacity-50;
+}
+
+/* purgecss end ignore */
