@@ -1,3 +1,5 @@
+<img src="sharepair-logo.png"/>
+
 # REPAIR PROJECT
 
 This project contains a total of 4 different projects. These are explained bellow.
@@ -31,7 +33,7 @@ More info can be read in [the setup docs](docs/setup.md)
 ---
 As stated previously this project consists of four projects.
 
-## 1. REPLOG
+## 1. Repair connects
 This is the main project and is [Repair connects](https://www.repairconnects.org).
 This is where all the repairers and organisations come together to share their experiences and knowledge.
 Everyone can register their devices and get in contact with repairers and organisations, in person or on events.
@@ -62,7 +64,7 @@ Stack:
 We extend the tailwind config with the repair components package, so you can use vue/tailwindcss components in this project.
 For more information look [here](https://github.com/statikbe/repair-components).
 
-## 2. REPGUI
+## 2. guidance sharepair
 This is the guidance tool and is mainly a static page website with dynamic content based on some actions.
 This is currently used for [Guidance tool](https://www.guidance.sharepair.org)
 
@@ -167,10 +169,3 @@ The entire application had ide helper data stored in PHPDoc. These can be regene
 If you want an overview of the data structure and all the relations you can run the following command.
 (This package is only installed with the composer dev dependencies)
 ``` php artisan generate:erd output.svg --format=svg```
-
-
-## Extra Repair Documentation
-
-Info about the repair components package that is used, can be found here:
-[Confluence repair components](https://statik.atlassian.net/wiki/spaces/FE/pages/1768488961/Repair+projecten)
-
