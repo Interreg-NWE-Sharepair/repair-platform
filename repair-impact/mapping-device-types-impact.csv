@@ -1,0 +1,69 @@
+name;code;ords_value;Parent category;Category Impact tool
+"{""de"": ""Computer und Zubehör"", ""en"": ""Computers and Home Office"", ""fr"": ""Matériel de bureau"", ""nl"": ""Computers en home office""}";computers-en-home-office;;;
+"{""de"": ""Desktop Computer"", ""en"": ""Desktop computer"", ""fr"": ""Ordinateur de bureau"", ""nl"": ""Desktop computer""}";desktop-computer;4;Computers and Home Office;
+"{""de"": ""kleiner Laptop"", ""en"": ""Laptop small"", ""fr"": ""Ordinateur portable petit"", ""nl"": ""Kleine laptop""}";laptop-small;16;Computers and Home Office;"laptop - small (11""-12"")"
+"{""de"": ""grosser Laptop"", ""en"": ""Laptop large"", ""fr"": ""Ordinateur portable grand"", ""nl"": ""Laptop groot""}";laptop-large;16;Computers and Home Office;"laptop - large (15""-17"")"
+"{""de"": ""Flachbildschirm 15 - 17 Zoll"", ""en"": ""Flatscreen 15-17''"", ""fr"": ""Écran plat 15-17\"""", ""nl"": ""Flatscreen 15-17''""}";flatscreen-15-17;8;Computers and Home Office;
+"{""de"": ""Flachbildschirm 19 - 20 Zoll"", ""en"": ""Flatscreen 19-20''"", ""fr"": ""Écran plat 19-20\"""", ""nl"": ""Flatscreen 19-20''""}";flatscreen-19-20;8;Computers and Home Office;
+"{""de"": ""Flachbildschirm 22 - 24 Zoll"", ""en"": ""Flatscreen 22-24''"", ""fr"": ""Écran plat 22-24\"""", ""nl"": ""Flatscreen 22-24''""}";flatscreen-22-24;8;Computers and Home Office;
+"{""de"": ""Elektronische Geräte"", ""en"": ""Electronic gadgets"", ""fr"": ""Gadgets électroniques"", ""nl"": ""Elektronische gadgets""}";elektronische-gadgets;;;
+"{""de"": ""Digitalkamera"", ""en"": ""Digital Compact Camera"", ""fr"": ""Appareil photo numérique"", ""nl"": ""Digitale camera""}";digital-compact-camera;5;Electronic gadgets;
+"{""de"": ""DSLR / Videokamera"", ""en"": ""DLSR / Video camera"", ""fr"": ""DSLR + Caméra vidéo"", ""nl"": ""DSLR + Video camera""}";dlsr-video-camera;6;Electronic gadgets;
+"{""de"": ""Portable Unterhaltungselektronik"", ""en"": ""Handheld entertainment device"", ""fr"": ""Appareil portatif"", ""nl"": ""Draagbaar entertainment device""}";handheld-entertainment-device;10;Electronic gadgets;
+"{""de"": ""Kopfhörer"", ""en"": ""Headphones"", ""fr"": ""Casques d'écoute"", ""nl"": ""Hoofdtelefoon""}";headphones;11;Electronic gadgets;
+"{""de"": ""Mobiltelefon"", ""en"": ""Mobile phone"", ""fr"": ""Téléphone mobile (GSM)"", ""nl"": ""Mobiele telefoon""}";mobile-phone;19;Electronic gadgets;
+"{""de"": ""Tablet oder e-Reader"", ""en"": ""Tablet or e-reader"", ""fr"": ""Tablette ou e-reader"", ""nl"": ""Tablet of e-reader""}";tablet-or-e-reader;30;Electronic gadgets;
+"{""de"": ""Unterhaltungselektronik"", ""en"": ""Home Entertainment"", ""fr"": ""Divertissement à domicile"", ""nl"": ""Thuis entertainment""}";thuis-entertainment;;;
+"{""de"": ""Flachbildschirm 26 - 30 Zoll"", ""en"": ""Flatscreen 26-30''"", ""fr"": ""Écran plat 26-30\"""", ""nl"": ""Flatscreen 26-30''""}";flatscreen-26-30;8;Home entertainment;
+"{""de"": ""Flachbildschirm 27 - 30 Zoll"", ""en"": ""Flatscreen 32-37''"", ""fr"": ""Écran plat 32-37\"""", ""nl"": ""Flatscreen 32-37''""}";flatscreen-32-37;8;Home entertainment;
+"{""de"": ""Hi-Fi Gerät"", ""en"": ""Hi-Fi integrated"", ""fr"": ""Appareil Hi-fi"", ""nl"": ""Hifi geïntegreerd""}";hi-fi-integrated;12;Home entertainment;
+"{""de"": ""Hi-Fi Zubehör"", ""en"": ""Hi-Fi separates"", ""fr"": ""Accessoires Hi-fi"", ""nl"": ""Hifi accessoires""}";hi-fi-separates;13;Home entertainment;
+"{""de"": ""Fernseh- oder Gamingzubehör"", ""en"": ""TV or gaming-related accessory"", ""fr"": ""Accessoire pour la télévision ou les jeux"", ""nl"": ""TV of game gerelateerd accessoire""}";tv-or-gaming-related-accessory;33;Home entertainment;
+"{""de"": ""Musikinstrumente"", ""en"": ""Musical instrument"", ""fr"": ""Instrument de musique"", ""nl"": ""Muziekinstrument""}";musical-instrument;20;Home entertainment;
+"{""de"": ""Portable Radios"", ""en"": ""Portable radio"", ""fr"": ""Radio portable"", ""nl"": ""Draagbare radio""}";portable-radio;23;Home entertainment;
+"{""de"": ""Projektor/Beamer"", ""en"": ""Projector"", ""fr"": ""Projecteur"", ""nl"": ""Projector""}";projector;26;Home entertainment;
+"{""de"": ""Küchen- und Haushaltsgeräte"", ""en"": ""Kitchen and Household items"", ""fr"": ""Cuisine et appareils ménagers"", ""nl"": ""Keuken en huishoudtoestellen""}";kitchen-and-household-item;;;
+"{""de"": ""Klimagerät/Entfeuchter"", ""en"": ""Aircon/Dehumidifier"", ""fr"": ""Climatiseur ou déshumidificateur"", ""nl"": ""Airco of luchtontvochtiger""}";aircondehumidifier;1;Kitchen and Household items;
+"{""de"": ""Dekorative oder Sicherheitsbeleuchtung"", ""en"": ""Decorative or safety light"", ""fr"": ""Eclairage décoratif ou de sécurité"", ""nl"": ""Decoratieve of veiligheidsverlichting""}";decorative-or-safety-light;3;Kitchen and Household items;
+"{""de"": ""Ventilator"", ""en"": ""Fan"", ""fr"": ""Ventilateur"", ""nl"": ""Ventilator""}";fan;7;Kitchen and Household items;
+"{""de"": ""Geräte für Haar/Körper"", ""en"": ""Hair/beauty item"", ""fr"": ""Appareil pour le soin du corps/des cheveux"", ""nl"": ""Haar/schoonheidsitem""}";hairbeauty-item;9;Kitchen and Household items;
+"{""de"": ""Wasserkocher"", ""en"": ""Kettle"", ""fr"": ""Bouilloire"", ""nl"": ""Waterkoker""}";kettle;14;Kitchen and Household items;
+"{""de"": ""Lampen"", ""en"": ""Lamp"", ""fr"": ""Lampe"", ""nl"": ""Lamp""}";lamp;15;Kitchen and Household items;
+"{""de"": ""Elektrische Werkzeuge"", ""en"": ""Power tool"", ""fr"": ""Outils électriques"", ""nl"": ""Elektrisch gereedschap""}";power-tool;24;Kitchen and Household items;
+"{""de"": ""Kleine Küchengeräte"", ""en"": ""Small kitchen item"", ""fr"": ""Petit électro cuisine"", ""nl"": ""Klein keukenelektro""}";small-kitchen-item;29;Kitchen and Household items;
+"{""de"": ""Toaster"", ""en"": ""Toaster"", ""fr"": ""Grille-pain"", ""nl"": ""Broodrooster""}";toaster;31;Kitchen and Household items;
+"{""de"": ""Spielzeug"", ""en"": ""Toy"", ""fr"": ""Jouets"", ""nl"": ""Speelgoed""}";toy;32;Kitchen and Household items;
+"{""de"": ""Staubsauger"", ""en"": ""Vacuum"", ""fr"": ""Aspirateur"", ""nl"": ""Stofzuiger""}";vacuum;34;Kitchen and Household items;vacuum cleaner
+"{""de"": ""Andere Kategorie"", ""en"": ""Other category"", ""fr"": ""Autre catégorie"", ""nl"": ""Andere categorie""}";other-category;;;
+"{""de"": ""Aktenvernichter"", ""en"": ""Paper schredder"", ""fr"": ""Déchiqueteuse"", ""nl"": ""Papierversnipperaar""}";paper-schredder;21;Electronic gadgets;
+"{""de"": ""Computerzubehör"", ""en"": ""PC Accessory"", ""fr"": ""Accessoire ordinateur"", ""nl"": ""PC Accessoire""}";pc-accessory;22;Electronic gadgets;
+"{""de"": ""Drucker/Scanner"", ""en"": ""Printer/scanner"", ""fr"": ""Imprimante/scanner"", ""nl"": ""Printer/scanner""}";printerscanner;25;Computers and Home Office;printer
+"{""de"": ""Kaffeemaschine"", ""en"": ""Coffee Maker"", ""fr"": ""Machine à café"", ""nl"": ""Koffiemachine""}";coffee-maker;36;Kitchen and Household items;coffee maker senseo AND coffee maker nespresso
+"{""de"": ""Spielkonsole"", ""en"": ""Games Console"", ""fr"": ""Console de jeu"", ""nl"": ""Spelconsole""}";games-console;38;Home entertainment;
+"{""de"": ""Mixer"", ""en"": ""Blender"", ""fr"": ""Mélangeur / Mixeur"", ""nl"": ""Blender/mixer""}";melangeur-mixeur;37;Kitchen and Household items;
+"{""de"": ""Bügelmaschine"", ""en"": ""Iron"", ""fr"": ""Fer à repasser"", ""nl"": ""Strijkijzer""}";iron;40;Kitchen and Household items;
+"{""de"": ""Haartrockner"", ""en"": ""Hair dryer"", ""fr"": ""Sèche-cheveux"", ""nl"": ""Haardroger""}";hair-dryer;39;Kitchen and Household items;
+"{""de"": ""Batterieladegerät"", ""en"": ""Battery/charger/adapter"", ""fr"": ""Batteries/chargeurs"", ""nl"": ""Batterijlader/adaptor""}";batterychargeradapter;2;Electronic gadgets;
+"{""de"": ""Grosse Haushaltsgeräte"", ""en"": ""Large home electrical"", ""fr"": ""Grand appareil électroménager"", ""nl"": ""Groot huishoudelijk elektro""}";large-home-electrical;17;Kitchen and Household items;
+"{""de"": ""Nähmaschine"", ""en"": ""Sewing machine"", ""fr"": ""Machine à coudre"", ""nl"": ""Naaimachine""}";sewing-machine;27;Kitchen and Household items;
+"{""de"": ""Uhr"", ""en"": ""Watch/clock"", ""fr"": ""Horloge/montre"", ""nl"": ""Uurwerk/klok""}";watchclock;35;Other category;
+"{""de"": ""Andere"", ""en"": ""Other"", ""fr"": ""Autre"", ""nl"": ""Andere""}";other;18;Other category;
+"{""de"": ""Kleidung & Textilien"", ""en"": ""Clothing & textiles"", ""fr"": ""Vêtements & textile"", ""nl"": ""Kledij & textiel""}";clothing-textiles;18;Other category;
+"{""de"": ""Möbel"", ""en"": ""Furniture"", ""fr"": ""Mobilier"", ""nl"": ""Meubels""}";furniture;18;Other category;
+"{""de"": ""Fahrräd"", ""en"": ""Bicycle"", ""fr"": ""Vélo"", ""nl"": ""Fiets""}";bicycle;18;Other category;
+"{""de"": ""Hosen"", ""en"": ""Trousers"", ""fr"": ""Pantalon"", ""nl"": ""Broek""}";trousers;18;Other category;
+"{""de"": ""Kleid"", ""en"": ""Dress"", ""fr"": ""Robe"", ""nl"": ""Kleed""}";dress;18;Other category;
+"{""de"": ""Rock"", ""en"": ""Skirt"", ""fr"": ""Jupe"", ""nl"": ""Rok""}";skirt;18;Other category;
+"{""de"": ""Bluse / Hemd"", ""en"": ""Blouse / Shirt"", ""fr"": ""Blouse / Chemise"", ""nl"": ""Bloes / Hemd""}";blouse-shirt;18;Other category;
+"{""de"": ""Jacke"", ""en"": ""Jacket"", ""fr"": ""Veste"", ""nl"": ""Jas""}";jacket;18;Other category;
+"{""de"": ""Bettzeug"", ""en"": ""Bed linen"", ""fr"": ""Linge de lit"", ""nl"": ""Bedlinnen""}";bed-linen;18;Other category;
+"{""de"": ""Andere Textilien"", ""en"": ""Other textile"", ""fr"": ""Autre textiles"", ""nl"": ""Ander textiel""}";other-textile;18;Other category;
+"{""de"": ""Pullover"", ""en"": ""Jumper"", ""fr"": ""Pull"", ""nl"": ""Trui""}";jumper;18;Other category;
+"{""de"": ""Tintenstrahldrucker"", ""en"": ""Inkjet printer"", ""fr"": ""Imprimante à jet d'encre"", ""nl"": ""Inktjetprinter""}";inktjetprinter;;;printer
+"{""de"": ""Laserdrucker"", ""en"": ""Laser printer"", ""fr"": ""Imprimante laser"", ""nl"": ""Laserprinter""}";laserprinter;;;printer
+"{""de"": ""Windows-Laptop"", ""en"": ""Windows laptop"", ""fr"": ""Ordinateur portable Windows"", ""nl"": ""Windows laptop""}";windows-laptop;;;"laptop - medium (13""-14"")"
+"{""de"": null, ""fr"": ""Imprimante laser"", ""nl"": ""Laserprinter""}";laserprinter-1;;;printer
+"{""de"": ""Smartphone Android"", ""en"": ""Smartphones Android"", ""fr"": ""Smartphone Android"", ""nl"": ""Smartphones Android""}";smartphones-android;;;
+"{""de"": ""Smartphone Apple"", ""en"": ""Smartphone Apple"", ""fr"": ""Smartphone Apple"", ""nl"": ""Smartphone Apple""}";smartphone-apple;;;
+"{""de"": ""Waschmaschine"", ""en"": ""Washing machine"", ""fr"": ""Lave-linge"", ""nl"": ""Wasmachine""}";washing-machine;;;washing machine
+"{""de"": ""Laptop MacOS"", ""en"": ""Laptop MacOS"", ""fr"": ""Ordinateur portable MacOS"", ""nl"": ""Laptop MacOS""}";laptop-macos;;;"laptop - medium (13""-14"")"
